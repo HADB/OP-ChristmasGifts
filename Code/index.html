@@ -15,40 +15,55 @@
         <img class="logo" src="img/common/logo.png" />
     </div>
     <div class="pages">
-        <div class="page-1" style="display:none">
-            <img class="girl" src="img/page_1/girl.jpg" />
-            <img class="slogan" src="img/common/slogan.png" />
-            <img class="left-gift" src="img/common/left_gift.png" />
-            <img class="button" src="img/page_1/button.png" />
+        <div class="page-1">
+            <img class="girl nec-ani-moveFromLeft" src="img/page_1/girl.jpg" />
+            <img class="right-gift nec-ani-moveFromRight nec-ani-delay1000" src="img/page_1/right_gift.png" />
+            <img class="slogan nec-ani-moveRightLeftSpring nec-ani-delay500" src="img/common/slogan.png" />
+            <img class="left-gift nec-ani-moveFromLeft nec-ani-delay1000" src="img/common/left_gift.png" />
+            <img class="button  nec-ani-moveFromRight nec-ani-delay1500" src="img/page_1/button.png" />
         </div>
-        <div class="page-2" style="display:none">
+        <div class="page-2 hide">
             <img class="cup" src="img/page_2/cup.jpg" />
-            <img class="socks" src="img/page_2/socks.jpg" />
+            <img class="socks hide" src="img/page_2/socks.jpg" />
         </div>
-        <div class="page-3" style="display:none">
+        <div class="page-3 hide">
             <img class="slogan" src="img/common/slogan.png" />
             <img class="gift" src="img/page_3/gift.png" />
         </div>
-        <div class="page-4" style="display:none">
+        <div class="page-4 hide">
             <img class="text" src="img/page_4/text.png" />
             <img class="left-gift" src="img/common/left_gift.png" />
-            <img class="gift-1" src="img/page_4/gift_1.png" />
-            <img class="gift-2" src="img/page_4/gift_2.png" />
-            <img class="gift-3" src="img/page_4/gift_3.png" />
-            <img class="gift-4" src="img/page_4/gift_4.png" />
+            <img class="gift gift-1" src="img/page_4/gift_1.png" />
+            <img class="gift gift-2" src="img/page_4/gift_2.png" />
+            <img class="gift gift-3" src="img/page_4/gift_3.png" />
+            <img class="gift gift-4" src="img/page_4/gift_4.png" />
             <img class="shadow-1" src="img/page_4/shadow_1.png" />
             <img class="shadow-2" src="img/page_4/shadow_2.png" />
             <img class="shadow-3" src="img/page_4/shadow_3.png" />
             <img class="shadow-4" src="img/page_4/shadow_4.png" />
         </div>
-        <div class="page-5" style="display:none">
-            <img class="gift gift-1" src="img/page_5/gift_1.jpg" />
-            <img class="gift gift-2" src="img/page_5/gift_2.jpg" />
-            <img class="gift gift-3" src="img/page_5/gift_3.jpg" />
-            <img class="gift gift-4" src="img/page_5/gift_4.jpg" />
+        <div class="page-5 hide">
+            <img class="gift gift-1 hide" src="img/page_5/gift_1.jpg" />
+            <img class="gift gift-2 hide" src="img/page_5/gift_2.jpg" />
+            <img class="gift gift-3 hide" src="img/page_5/gift_3.jpg" />
+            <img class="gift gift-4 hide" src="img/page_5/gift_4.jpg" />
             <img class="bottom-gift" src="img/common/bottom_gift.png" />
+            <img class="get-jifen-button" src="img/page_5/button.png" />
+            <div class="form hide">
+                <img class="background" src="img/page_5/form.png" />
+                <input class="name" type="text" />
+                <input class="phone" type="number" />
+                <span class="age"></span>
+                <div class="button"></div>
+                <div class="dropdown hide">
+                    <div class="dropdown-age-1"></div>
+                    <div class="dropdown-age-2"></div>
+                    <div class="dropdown-age-3"></div>
+                    <div class="dropdown-age-4"></div>
+                </div>
+            </div>
         </div>
-        <div class="page-6" style="display:none">
+        <div class="page-6 hide">
             <img class="bottom-gift" src="img/common/bottom_gift.png" />
             <img class="jifen-90" src="img/page_6/jifen_90.jpg" />
             <img class="jifen-100" src="img/page_6/jifen_100.jpg" />
@@ -58,7 +73,7 @@
             <div class="phone-number">手机号：12304567890</div>
             <img class="shops-button" src="img/page_6/shops_button.png" />
         </div>
-        <div class="page-7" style="display:none">
+        <div class="page-7 hide">
             <img class="bottom-gift" src="img/common/bottom_gift.png" />
             <img class="left-gift" src="img/common/left_gift.png" />
             <img class="back-button" src="img/page_7/back_button.png" />
@@ -66,5 +81,9 @@
             <img class="text" src="img/page_7/text.png" />
         </div>
     </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/haoest.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

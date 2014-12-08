@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+.hide {
+    display: none;
+}
+
 .header {
     padding: 0;
 }
@@ -28,8 +32,14 @@ body {
     }
 
 .page-1 .girl {
-    width: 100%;
+    width: 80%;
     bottom: 0;
+}
+
+.page-1 .right-gift {
+    width: 67%;
+    bottom: 0;
+    right: 0;
 }
 
 .page-1 .slogan {
@@ -170,6 +180,113 @@ body {
     width: 60%;
     top: 10%;
     left: 20%;
+}
+
+.page-5 .get-jifen-button {
+    width: 50%;
+    left: 25%;
+    bottom: 22%;
+}
+
+.page-5 .form .background {
+    width: 320px;
+    height: 475px;
+    left: 50%;
+    top: 50%;
+    margin-left: -160px;
+    margin-top: -270px;
+}
+
+.page-5 .form .name {
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 160px;
+    height: 25px;
+    left: 50%;
+    top: 50%;
+    margin-left: -55px;
+    margin-top: -49px;
+}
+
+.page-5 .form .phone {
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 160px;
+    height: 25px;
+    left: 50%;
+    top: 50%;
+    margin-left: -55px;
+    margin-top: -5px;
+}
+
+.page-5 .form .age {
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+    padding-top: 2px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 176px;
+    height: 27px;
+    left: 50%;
+    top: 50%;
+    margin-left: -55px;
+    margin-top: 39px;
+}
+
+.page-5 .form .button {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -60px;
+    margin-top: 120px;
+}
+
+.page-5 .dropdown {
+    position: absolute;
+    background-image: url('../img/page_5/dropdown.png');
+    background-size: 120px 150px;
+    width: 120px;
+    height: 150px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: 56px;
+}
+
+    .page-5 .dropdown div {
+        position: absolute;
+        width: 97px;
+        height: 35px;
+        left: 50%;
+        top: 50%;
+        margin-left: -49px;
+        background-color: #fff;
+        opacity: 0;
+    }
+
+.page-5 .dropdown-age-1 {
+    margin-top: -64px;
+}
+
+.page-5 .dropdown-age-2 {
+    margin-top: -34px;
+}
+
+.page-5 .dropdown-age-3 {
+    margin-top: -4px;
+}
+
+.page-5 .dropdown-age-4 {
+    margin-top: 26px;
 }
 
 .page-6 .bottom-gift {

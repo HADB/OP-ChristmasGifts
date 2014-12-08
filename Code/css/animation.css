@@ -129,6 +129,11 @@
     animation: moveLeftRightSpring ease-in-out 1.2s both;
 }
 
+.nec-ani-moveRightLeftSpring {
+    -webkit-animation: moveRightLeftSpring ease-in-out 1.2s both;
+    animation: moveRightLeftSpring ease-in-out 1.2s both;
+}
+
 /* rotate */
 .nec-ani-rotateRight {
     -webkit-animation: rotateRight 2s linear infinite both;
@@ -557,13 +562,13 @@
 
 @-webkit-keyframes moveFromRight {
     0% {
-        -webkit-transform: translateX(100%);
+        -webkit-transform: translateX(200%);
     }
 }
 
 @keyframes moveFromRight {
     0% {
-        -webkit-transform: translateX(100%);
+        -webkit-transform: translateX(200%);
         transform: translateX(100%);
     }
 }
@@ -1030,6 +1035,73 @@
     65% {
         -webkit-transform: translateX(-8%);
         transform: translateX(-8%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes moveRightLeftSpring {
+    0% {
+        -webkit-transform: translateX(100%);
+        -webkit-opacity: 0;
+    }
+
+    5% {
+        -webkit-transform: translateX(80%);
+        -webkit-opacity: 0.3;
+    }
+
+    35% {
+        -webkit-transform: translateX(-6%);
+        -webkit-opacity: 1;
+    }
+
+    60% {
+        -webkit-transform: translateX(8%);
+    }
+
+    65% {
+        -webkit-transform: translateX(8%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+@keyframes moveRightLeftSpring {
+    0% {
+        -webkit-transform: translateX(100%);
+        -webkit-opacity: 0;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    5% {
+        -webkit-transform: translateX(80%);
+        -webkit-opacity: 0.3;
+        transform: translateX(80%);
+        opacity: 0.3;
+    }
+
+    35% {
+        -webkit-transform: translateX(-6%);
+        -webkit-opacity: 1;
+        transform: translateX(-6%);
+        opacity: 1;
+    }
+
+    60% {
+        -webkit-transform: translateX(8%);
+        transform: translateX(8%);
+    }
+
+    65% {
+        -webkit-transform: translateX(8%);
+        transform: translateX(8%);
     }
 
     100% {
