@@ -1,0 +1,255 @@
+body {
+    background-color: #e61839;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 0;
+}
+
+    .header .logo {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+.pages {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    height: 85%;
+}
+
+    .pages img {
+        position: absolute;
+    }
+
+.page-1 .girl {
+    width: 100%;
+    bottom: 0;
+}
+
+.page-1 .slogan {
+    width: 70%;
+    right: 10%;
+    top: 5%;
+}
+
+.page-1 .left-gift {
+    width: 15%;
+    left: 0;
+    top: 0;
+}
+
+.page-1 .button {
+    width: 45%;
+    right: 5%;
+    top: 30%;
+}
+
+.page-2 .cup {
+    width: 90%;
+    left: 5%;
+    top: 50%;
+    margin-top: -60%;
+}
+
+.page-2 .socks {
+    width: 90%;
+    left: 5%;
+    top: 50%;
+    margin-top: -60%;
+}
+
+.page-3 .slogan {
+    top: 5%;
+    left: 10%;
+    width: 80%;
+}
+
+.page-3 .gift {
+    bottom: 0;
+    width: 100%;
+}
+
+.page-4 .left-gift {
+    width: 15%;
+    left: 0;
+    top: 0;
+}
+
+.page-4 .text {
+    width: 60%;
+    left: 20%;
+    top: 5%;
+}
+
+
+.page-4 .shadow-1 {
+    width: 100px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    margin-left: -130px;
+    margin-top: 0px;
+}
+
+.page-4 .shadow-2 {
+    width: 100px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    margin-left: 30px;
+    margin-top: 0px;
+}
+
+.page-4 .shadow-3 {
+    width: 100px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    margin-left: -130px;
+    margin-top: 170px;
+}
+
+.page-4 .shadow-4 {
+    width: 100px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    margin-left: 30px;
+    margin-top: 170px;
+}
+
+.page-4 .gift-1 {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: -120px;
+}
+
+.page-4 .gift-2 {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    margin-left: 20px;
+    margin-top: -120px;
+}
+
+.page-4 .gift-3 {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: 50px;
+}
+
+.page-4 .gift-4 {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.page-5 .bottom-gift {
+    bottom: 0;
+    right: 0;
+    width: 80%;
+}
+
+.page-5 .gift {
+    width: 60%;
+    top: 10%;
+    left: 20%;
+}
+
+.page-6 .bottom-gift {
+    bottom: 0;
+    right: 0;
+    width: 80%;
+}
+
+.page-6 .shops-button {
+    width: 50%;
+    left: 25%;
+    bottom: 22%;
+}
+
+.page-6 .text {
+    width: 100%;
+    bottom: 35%;
+}
+
+.page-6 .jifen-90 {
+    width: 60%;
+    left: 20%;
+    top: 0;
+}
+
+.page-6 .jifen-100 {
+    width: 60%;
+    left: 20%;
+    top: 0;
+}
+
+.page-6 .jifen-200 {
+    width: 60%;
+    left: 20%;
+    top: 0;
+}
+
+.page-6 .jifen-400 {
+    width: 60%;
+    left: 20%;
+    top: 0;
+}
+
+.page-6 .phone-number {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    top: 32%;
+    font-family: "Microsoft YaHei",Arial,SimHei;
+}
+
+
+.page-7 .bottom-gift {
+    bottom: 0;
+    right: 0;
+    width: 80%;
+}
+
+.page-7 .back-button {
+    width: 50%;
+    left: 25%;
+    bottom: 22%;
+}
+
+.page-7 .left-gift {
+    width: 15%;
+    left: 0;
+    top: 0;
+}
+
+.page-7 .title {
+    top: 0;
+    width: 40%;
+    left: 30%;
+}
+
+.page-7 .text {
+    width: 60%;
+    top: 18%;
+    left: 15%;
+}
