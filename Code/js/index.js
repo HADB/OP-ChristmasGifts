@@ -1,6 +1,7 @@
 var SEG = {
     giftOpacity: 100,
-    currentPage: 1
+    currentPage: 1,
+    formData: { name: "", age: 0, phone: 0 }
 };
 
 $(function () {
@@ -65,10 +66,11 @@ $(function () {
     });
 
     $(".page-5 .form .button").click(function () {
-        var phoneNumber = $(".page-5 .form .phone").val();
-        $(".page-6 .phone-number").html("手机号：" + phoneNumber);
+        SEG.formData.phone = $(".page-5 .form .phone").val();
+        SEG.formData.name = $(".page-5 .form .name").val();
+        $(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
 
-        //To send ajax
+        //这里发出ajax请求，并对返回的json进行判断，如果正确的话进行下面两行的操作，否则，不进行任何操作。
 
         showPage(6);
         $(".page-5 .form").addClass("hide");
@@ -80,19 +82,19 @@ $(function () {
 
     $(".page-5 .form .dropdown div").click(function (e) {
         if ($(e.target).hasClass("dropdown-age-1")) {
-            console.log(1);
+            SEG.formData.age = 1;
             $(".page-5 .form .age").html("18-25岁");
         }
         if ($(e.target).hasClass("dropdown-age-2")) {
-            console.log(2);
+            SEG.formData.age = 2;
             $(".page-5 .form .age").html("26-36岁");
         }
         if ($(e.target).hasClass("dropdown-age-3")) {
-            console.log(3);
+            SEG.formData.age = 3;
             $(".page-5 .form .age").html("36-45岁");
         }
         if ($(e.target).hasClass("dropdown-age-4")) {
-            console.log(4);
+            SEG.formData.age = 4;
             $(".page-5 .form .age").html("45岁以上");
         }
         $(e.target).css("opacity", 0.6);
