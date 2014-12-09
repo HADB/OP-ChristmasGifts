@@ -122,6 +122,7 @@ function showPage(pageNumber) {
     setTimeout(function () {
         $(".page-" + SEG.currentPage).addClass("hide");
         $(".page-" + SEG.currentPage).removeClass("nec-ani-fadeOut");
+        window.scrollTo(0, 0);
         $(".page-" + pageNumber).addClass("nec-ani-fadeIn");
         $(".page-" + pageNumber).removeClass("hide");
         setTimeout(function () {
