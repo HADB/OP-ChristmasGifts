@@ -5,8 +5,10 @@ var SEG = {
 };
 
 $(function () {
-    document.addEventListener('touchmove', function (event) {
-        event.preventDefault();
+    document.addEventListener('touchmove', function (e) {
+        if (!$(e.target).hasClass(".page-5")) {
+            e.preventDefault();
+        }
     }, false);
 
     $(".page-1 .button").click(function () {
