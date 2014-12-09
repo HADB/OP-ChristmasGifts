@@ -33,12 +33,12 @@ body {
 
 .page-1 .girl {
     width: 80%;
-    bottom: 10%;
+    bottom: 0;
 }
 
 .page-1 .right-gift {
     width: 67%;
-    bottom: 10%;
+    bottom: 0;
     right: 0;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .page-3 .gift {
-    bottom: 10%;
+    bottom: 0;
     width: 100%;
 }
 
@@ -171,7 +171,7 @@ body {
 }
 
 .page-5 .bottom-gift {
-    bottom: 10%;
+    bottom: 0;
     right: 0;
     width: 80%;
 }
@@ -185,7 +185,7 @@ body {
 .page-5 .get-jifen-button {
     width: 50%;
     left: 25%;
-    bottom: 32%;
+    bottom: 22%;
 }
 
 .page-5 .form .background {
@@ -290,7 +290,7 @@ body {
 }
 
 .page-6 .bottom-gift {
-    bottom: 10%;
+    bottom: 0;
     right: 0;
     width: 80%;
 }
@@ -298,12 +298,12 @@ body {
 .page-6 .shops-button {
     width: 50%;
     left: 25%;
-    bottom: 32%;
+    bottom: 22%;
 }
 
 .page-6 .text {
     width: 100%;
-    bottom: 45%;
+    bottom: 35%;
 }
 
 .page-6 .jifen-90 {
@@ -342,7 +342,7 @@ body {
 
 
 .page-7 .bottom-gift {
-    bottom: 10%;
+    bottom: 0;
     right: 0;
     width: 80%;
 }
@@ -350,7 +350,7 @@ body {
 .page-7 .back-button {
     width: 50%;
     left: 25%;
-    bottom: 32%;
+    bottom: 22%;
 }
 
 .page-7 .left-gift {
