@@ -33,12 +33,12 @@ body {
 
 .page-1 .girl {
     width: 80%;
-    bottom: 10%;
+    bottom: 0;
 }
 
 .page-1 .right-gift {
     width: 67%;
-    bottom: 10%;
+    bottom: 0;
     right: 0;
 }
 
@@ -64,14 +64,14 @@ body {
     width: 90%;
     left: 5%;
     top: 50%;
-    margin-top: -60%;
+    margin-top: -70%;
 }
 
 .page-2 .socks {
     width: 90%;
     left: 5%;
     top: 50%;
-    margin-top: -60%;
+    margin-top: -70%;
 }
 
 .page-3 .slogan {
@@ -81,7 +81,7 @@ body {
 }
 
 .page-3 .gift {
-    bottom: 10%;
+    bottom: 8%;
     width: 100%;
 }
 
@@ -104,7 +104,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -130px;
-    margin-top: 0px;
+    margin-top: -30px;
 }
 
 .page-4 .shadow-2 {
@@ -113,7 +113,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: 30px;
-    margin-top: 0px;
+    margin-top: -30px;
 }
 
 .page-4 .shadow-3 {
@@ -122,7 +122,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -130px;
-    margin-top: 170px;
+    margin-top: 140px;
 }
 
 .page-4 .shadow-4 {
@@ -131,7 +131,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: 30px;
-    margin-top: 170px;
+    margin-top: 140px;
 }
 
 .page-4 .gift-1 {
@@ -140,7 +140,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -140px;
-    margin-top: -120px;
+    margin-top: -150px;
 }
 
 .page-4 .gift-2 {
@@ -149,7 +149,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: 20px;
-    margin-top: -120px;
+    margin-top: -150px;
 }
 
 .page-4 .gift-3 {
@@ -158,7 +158,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -140px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .page-4 .gift-4 {
@@ -167,25 +167,25 @@ body {
     left: 50%;
     top: 50%;
     margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .page-5 .bottom-gift {
-    bottom: 10%;
+    bottom: 8%;
     right: 0;
     width: 80%;
 }
 
 .page-5 .gift {
     width: 60%;
-    top: 10%;
+    top: 0;
     left: 20%;
 }
 
 .page-5 .get-jifen-button {
     width: 50%;
     left: 25%;
-    bottom: 32%;
+    bottom: 30%;
 }
 
 .page-5 .form .background {
@@ -194,7 +194,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -160px;
-    margin-top: -270px;
+    margin-top: -300px;
 }
 
 .page-5 .form .name {
@@ -208,7 +208,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -55px;
-    margin-top: -49px;
+    margin-top: -79px;
 }
 
 .page-5 .form .phone {
@@ -222,7 +222,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -55px;
-    margin-top: -5px;
+    margin-top: -35px;
 }
 
 .page-5 .form .age {
@@ -237,7 +237,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -55px;
-    margin-top: 39px;
+    margin-top: 9px;
 }
 
 .page-5 .form .button {
@@ -247,7 +247,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -60px;
-    margin-top: 120px;
+    margin-top: 90px;
 }
 
 .page-5 .dropdown {
@@ -259,7 +259,7 @@ body {
     left: 50%;
     top: 50%;
     margin-left: -20px;
-    margin-top: 56px;
+    margin-top: 26px;
 }
 
     .page-5 .dropdown div {
@@ -274,23 +274,23 @@ body {
     }
 
 .page-5 .dropdown-age-1 {
-    margin-top: -64px;
+    margin-top: -94px;
 }
 
 .page-5 .dropdown-age-2 {
-    margin-top: -34px;
+    margin-top: -64px;
 }
 
 .page-5 .dropdown-age-3 {
-    margin-top: -4px;
+    margin-top: -34px;
 }
 
 .page-5 .dropdown-age-4 {
-    margin-top: 26px;
+    margin-top: -4px;
 }
 
 .page-6 .bottom-gift {
-    bottom: 10%;
+    bottom: 0;
     right: 0;
     width: 80%;
 }
@@ -298,12 +298,12 @@ body {
 .page-6 .shops-button {
     width: 50%;
     left: 25%;
-    bottom: 32%;
+    bottom: 22%;
 }
 
 .page-6 .text {
     width: 100%;
-    bottom: 45%;
+    bottom: 35%;
 }
 
 .page-6 .jifen-90 {
@@ -342,7 +342,7 @@ body {
 
 
 .page-7 .bottom-gift {
-    bottom: 10%;
+    bottom: 0;
     right: 0;
     width: 80%;
 }
@@ -350,7 +350,7 @@ body {
 .page-7 .back-button {
     width: 50%;
     left: 25%;
-    bottom: 32%;
+    bottom: 22%;
 }
 
 .page-7 .left-gift {
