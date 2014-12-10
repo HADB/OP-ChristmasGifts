@@ -204,6 +204,7 @@ body {
     top: 50%;
     margin-left: -55px;
     margin-top: -79px;
+    padding-left: 2px;
 }
 
 .page-5 .form .phone {
@@ -218,12 +219,13 @@ body {
     top: 50%;
     margin-left: -55px;
     margin-top: -35px;
+    padding-left: 2px;
 }
 
 .page-5 .form .age {
     font-family: 'Microsoft Yahei';
     font-size: 14px;
-    padding-top: 2px;
+    padding-top: 3px;
     background-color: transparent;
     border: none;
     position: absolute;
@@ -233,6 +235,7 @@ body {
     top: 50%;
     margin-left: -55px;
     margin-top: 9px;
+    padding-left: 2px;
 }
 
 .page-5 .form .button {
