@@ -137,7 +137,7 @@ function showPage(pageNumber) {
 }
 
 function tapClip(canvas, ctx, index) {
-    var x1, y1, a = 30, timeout, totimes = 100, jiange = 30;
+    var x1, y1, a = 10, timeout, totimes = 100, jiange = 10;
     var hastouch = "ontouchstart" in window ? true : false,
         tapstart = hastouch ? "touchstart" : "mousedown",
         tapmove = hastouch ? "touchmove" : "mousemove",
@@ -151,10 +151,8 @@ function tapClip(canvas, ctx, index) {
     canvas.addEventListener(tapstart, function (e) {
         clearTimeout(timeout)
         e.preventDefault();
-
-        x1 = hastouch ? e.targetTouches[0].pageX : e.clientX - canvas.offsetLeft;
-        y1 = hastouch ? e.targetTouches[0].pageY : e.clientY - canvas.offsetTop;
-
+        x1 = (hastouch ? e.targetTouches[0].pageX : e.clientX) - canvas.offsetLeft - $(".pages")[0].offsetLeft;
+        y1 = (hastouch ? e.targetTouches[0].pageY : e.clientY) - canvas.offsetTop - $(".pages")[0].offsetTop;
         ctx.save();
         ctx.beginPath();
         ctx.arc(x1, y1, 1, 0, 2 * Math.PI);
@@ -187,14 +185,13 @@ function tapClip(canvas, ctx, index) {
                         showPage(3);
                     }
                 }
-            }, totimes)
+            }, totimes);
         });
         function tapmoveHandler(e) {
             clearTimeout(timeout);
             e.preventDefault();
-            x2 = hastouch ? e.targetTouches[0].pageX : e.clientX - canvas.offsetLeft;
-            y2 = hastouch ? e.targetTouches[0].pageY : e.clientY - canvas.offsetTop;
-
+            x2 = (hastouch ? e.targetTouches[0].pageX : e.clientX) - canvas.offsetLeft - $(".pages")[0].offsetLeft;
+            y2 = (hastouch ? e.targetTouches[0].pageY : e.clientY) - canvas.offsetTop - $(".pages")[0].offsetTop;
             ctx.save();
             ctx.moveTo(x1, y1);
             ctx.lineTo(x2, y2);
