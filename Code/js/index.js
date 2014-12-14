@@ -15,34 +15,6 @@ $(function () {
         showPage(2);
     });
 
-    //$(".cup").on("touchmove", function () {
-    //    SEG.giftOpacity -= 1;
-    //    if (SEG.giftOpacity % 10 == 0) {
-    //        $(".cup").css("opacity", SEG.giftOpacity / 100);
-    //    }
-    //    if (SEG.giftOpacity < 1) {
-    //        SEG.giftOpacity = 100;
-    //        $(".cup").addClass("hide");
-    //        $(".socks").addClass("nec-ani-fadeIn");
-    //        $(".socks").removeClass("hide");
-    //        setTimeout(function () {
-    //            $(".socks").removeClass("nec-ani-fadeIn");
-    //        }, 600);
-    //    }
-    //});
-
-    //$(".socks").on("touchmove", function () {
-    //    SEG.giftOpacity -= 1;
-    //    if (SEG.giftOpacity % 10 == 0) {
-    //        $(".socks").css("opacity", SEG.giftOpacity / 100);
-    //    }
-    //    if (SEG.giftOpacity < 1) {
-    //        SEG.giftOpacity = 100;
-    //        $(".socks").addClass("hide");
-    //        showPage(3);
-    //    }
-    //});
-
     $(".page-3 .gift").click(function () {
         showPage(4);
     });
@@ -130,13 +102,24 @@ function showPage(pageNumber) {
         if (pageNumber == 2) {
             var canvas1 = $("#cas")[0];
             var ctx1 = canvas1.getContext("2d");
-            canvas1.width = $(".socks").width();
-            canvas1.height = $(".socks").height();
+            canvas1.width = $(".bottom-layer").width();
+            canvas1.height = $(".bottom-layer").height();
             var img1 = new Image();
             img1.src = "img/page_2/cup.jpg";
             img1.onload = function () {
                 ctx1.drawImage(img1, 0, 0, canvas1.width, canvas1.height);
-                tapClip(canvas1, ctx1);
+                tapClip(canvas1, ctx1, 1);
+            };
+
+            var canvas2 = $("#cas2")[0];
+            var ctx2 = canvas2.getContext("2d");
+            canvas2.width = $(".bottom-layer").width();
+            canvas2.height = $(".bottom-layer").height();
+            var img2 = new Image();
+            img2.src = "img/page_2/socks.jpg";
+            img2.onload = function () {
+                ctx2.drawImage(img2, 0, 0, canvas2.width, canvas2.height);
+                tapClip(canvas2, ctx2, 2);
             }
         }
         setTimeout(function () {
@@ -153,7 +136,7 @@ function showPage(pageNumber) {
     }
 }
 
-function tapClip(canvas, ctx) {
+function tapClip(canvas, ctx, index) {
     var x1, y1, a = 30, timeout, totimes = 100, jiange = 30;
     var hastouch = "ontouchstart" in window ? true : false,
         tapstart = hastouch ? "touchstart" : "mousedown",
@@ -189,30 +172,19 @@ function tapClip(canvas, ctx) {
                     for (var y = 0; y < imgData.height; y += jiange) {
                         var i = (y * imgData.width + x) * 4;
                         if (imgData.data[i + 3] > 0) {
-                            dd++
+                            dd++;
                         }
                     }
                 }
                 if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.4) {
-                    if (!$("#cas").hasClass("hide")) {
+                    if (index == 1) {
                         $("#cas").addClass("hide");
-                        $(".socks").attr("src", "img/page_2/page_3_bg.jpg");
+                        $(".bottom-layer").attr("src", "img/page_2/page_3_bg.jpg");
                         $("#cas2").removeClass("hide");
-
-                        var canvas2 = $("#cas2")[0];
-                        var ctx2 = canvas2.getContext("2d");
-                        canvas2.width = $(".socks").width();
-                        canvas2.height = $(".socks").height();
-                        var img2 = new Image();
-                        img2.src = "img/page_2/socks.jpg";
-                        img2.onload = function () {
-                            ctx2.drawImage(img2, 0, 0, canvas2.width, canvas2.height);
-                        }
-                        tapClip(canvas2, ctx2);
                     }
-                    else if (!$("#cas2").hasClass("hide")) {
-                        //$("#cas2").addClass("hide");
-                        //showPage(3);
+                    else {
+                        $("#cas2").addClass("hide");
+                        showPage(3);
                     }
                 }
             }, totimes)
