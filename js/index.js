@@ -109,6 +109,7 @@ function showPage(pageNumber) {
             img1.onload = function () {
                 ctx1.drawImage(img1, 0, 0, canvas1.width, canvas1.height);
                 tapClip(canvas1, ctx1, 1);
+                $(".bottom-layer").removeClass("opacity-0");
             };
 
             var canvas2 = $("#cas2")[0];
@@ -137,7 +138,7 @@ function showPage(pageNumber) {
 }
 
 function tapClip(canvas, ctx, index) {
-    var x1, y1, a = 10, timeout, totimes = 100, jiange = 10;
+    var x1, y1, a = 20, timeout, totimes = 100, jiange = 20;
     var hastouch = "ontouchstart" in window ? true : false,
         tapstart = hastouch ? "touchstart" : "mousedown",
         tapmove = hastouch ? "touchmove" : "mousemove",
@@ -174,14 +175,26 @@ function tapClip(canvas, ctx, index) {
                         }
                     }
                 }
-                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.4) {
+                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.6) {
                     if (index == 1) {
-                        $("#cas").addClass("hide");
-                        $(".bottom-layer").attr("src", "img/page_2/page_3_bg.jpg");
-                        $("#cas2").removeClass("hide");
+                        $("#cas").addClass("nec-ani-fadeOut");
+                        setTimeout(function () {
+                            $("#cas").addClass("hide");
+                            $("#cas").removeClass("nec-ani-fadeOut");
+                            $("#cas2").addClass("nec-ani-fadeIn");
+                            $("#cas2").removeClass("hide");
+                            setTimeout(function () {
+                                $("#cas2").removeClass("nec-ani-fadeIn");
+                                $(".bottom-layer").attr("src", "img/page_2/page_3_bg.jpg");
+                            }, 600);
+                        }, 600);
                     }
                     else {
-                        $("#cas2").addClass("hide");
+                        $("#cas2").addClass("nec-ani-fadeOut");
+                        setTimeout(function () {
+                            $("#cas2").addClass("hide");
+                            $("#cas2").removeClass("nec-ani-fadeOut");
+                        }, 600);
                         showPage(3);
                     }
                 }
