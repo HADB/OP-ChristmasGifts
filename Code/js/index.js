@@ -161,12 +161,19 @@ $(function () {
 });
 
 function showPage(pageNumber) {
-    $(".page-" + SEG.currentPage).addClass("nec-ani-fadeOut");
+    var outClass = "nec-ani-fadeOut";
+    var inClass = "nec-ani-fadeIn";
+
+    if (pageNumber == 3) {
+        outClass = "nec-ani-rotateOut";
+    }
+
+    $(".page-" + SEG.currentPage).addClass(outClass);
     setTimeout(function () {
         $(".page-" + SEG.currentPage).addClass("hide");
-        $(".page-" + SEG.currentPage).removeClass("nec-ani-fadeOut");
+        $(".page-" + SEG.currentPage).removeClass(outClass);
         window.scrollTo(0, 0);
-        $(".page-" + pageNumber).addClass("nec-ani-fadeIn");
+        $(".page-" + pageNumber).addClass(inClass);
         $(".page-" + pageNumber).removeClass("hide");
         if (pageNumber == 2) {
             var canvas1 = $("#cas")[0];
@@ -192,22 +199,16 @@ function showPage(pageNumber) {
                 tapClip(canvas2, ctx2, 2);
             }
         }
+
         setTimeout(function () {
-            $(".page-" + pageNumber).removeClass("nec-ani-fadeIn");
+            $(".page-" + pageNumber).removeClass(inClass);
         }, 600);
         SEG.currentPage = pageNumber;
     }, 600);
-
-
-    if (pageNumber == 3) {
-        setTimeout(function () {
-            $(".cup").removeClass("hide");
-        }, 600);
-    }
 }
 
 function tapClip(canvas, ctx, index) {
-    var x1, y1, a = 20, timeout, totimes = 100, jiange = 20;
+    var x1, y1, a = 20, timeout, totimes = 10, jiange = 20;
     var hastouch = "ontouchstart" in window ? true : false,
         tapstart = hastouch ? "touchstart" : "mousedown",
         tapmove = hastouch ? "touchmove" : "mousemove",
@@ -219,7 +220,7 @@ function tapClip(canvas, ctx, index) {
     ctx.globalCompositeOperation = "destination-out";
 
     canvas.addEventListener(tapstart, function (e) {
-        clearTimeout(timeout)
+        clearTimeout(timeout);
         e.preventDefault();
         x1 = (hastouch ? e.targetTouches[0].pageX : e.clientX) - canvas.offsetLeft - $(".pages")[0].offsetLeft;
         y1 = (hastouch ? e.targetTouches[0].pageY : e.clientY) - canvas.offsetTop - $(".pages")[0].offsetTop;
@@ -244,26 +245,22 @@ function tapClip(canvas, ctx, index) {
                         }
                     }
                 }
-                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.6) {
+                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.9) {
                     if (index == 1) {
-                        $("#cas").addClass("nec-ani-fadeOut");
+                        $("#cas").addClass("nec-ani-rotateOut");
                         setTimeout(function () {
                             $("#cas").addClass("hide");
-                            $("#cas").removeClass("nec-ani-fadeOut");
-                            $("#cas2").addClass("nec-ani-fadeIn");
+                            $("#cas").removeClass("nec-ani-rotateOut");
+                            $(".bottom-layer").addClass("opacity-0");
                             $("#cas2").removeClass("hide");
-                            setTimeout(function () {
-                                $("#cas2").removeClass("nec-ani-fadeIn");
-                                $(".bottom-layer").attr("src", "img/page_2/page_3_bg.jpg");
-                            }, 600);
-                        }, 600);
+                        }, 800);
                     }
                     else {
-                        $("#cas2").addClass("nec-ani-fadeOut");
+                        $("#cas2").addClass("nec-ani-rotateOut");
                         setTimeout(function () {
                             $("#cas2").addClass("hide");
-                            $("#cas2").removeClass("nec-ani-fadeOut");
-                        }, 600);
+                            $("#cas2").removeClass("nec-ani-rotateOut");
+                        }, 800);
                         showPage(3);
                     }
                 }
