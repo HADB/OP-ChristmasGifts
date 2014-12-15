@@ -74,7 +74,7 @@ body {
             opacity: 0;
         }
 
-    .page-2 #cas, .page-2 #cas2 {
+    .page-2 #cas {
         position: absolute;
         left: 10%;
     }
