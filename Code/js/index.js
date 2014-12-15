@@ -183,9 +183,11 @@ function showPage(pageNumber) {
             var img1 = new Image();
             img1.src = "img/page_2/cup.jpg";
             img1.onload = function () {
+                alert("杯子加载完毕！即将显示杯子");
                 context.drawImage(img1, 0, 0, canvas.width, canvas.height);
                 $(".bottom-layer").removeClass("opacity-0");
                 tapClip(canvas, context);
+                alert("已显示杯子");
             };
         }
 
@@ -240,14 +242,18 @@ function tapClip(canvas, context) {
                     if (currentGift == 1 && !wait) {
                         var img2 = new Image();
                         img2.src = "img/page_2/socks.jpg";
-                        context.globalCompositeOperation = 'source-over';
-                        context.drawImage(img2, 0, 0, canvas.width, canvas.height);
-                        context.globalCompositeOperation = 'destination-out';
-                        $(".bottom-layer").attr("src", "img/page_2/gift.jpg");
-                        wait = true;
-                        setTimeout(function () {
-                            currentGift = 2;
-                        }, 500);
+                        img2.onload = function () {
+                            alert("袜子加载完毕！即将显示袜子");
+                            context.globalCompositeOperation = 'source-over';
+                            context.drawImage(img2, 0, 0, canvas.width, canvas.height);
+                            context.globalCompositeOperation = 'destination-out';
+                            alert("已显示袜子");
+                            $(".bottom-layer").attr("src", "img/page_2/gift.jpg");
+                            wait = true;
+                            setTimeout(function () {
+                                currentGift = 2;
+                            }, 500);
+                        }
                     }
                     if (currentGift == 2) {
                         showPage(3);
