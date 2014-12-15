@@ -176,28 +176,17 @@ function showPage(pageNumber) {
         $(".page-" + pageNumber).addClass(inClass);
         $(".page-" + pageNumber).removeClass("hide");
         if (pageNumber == 2) {
-            var canvas1 = $("#cas")[0];
-            var ctx1 = canvas1.getContext("2d");
-            canvas1.width = $(".bottom-layer").width();
-            canvas1.height = $(".bottom-layer").height();
+            var canvas = $("#cas")[0];
+            canvas.width = $(".bottom-layer").width();
+            canvas.height = $(".bottom-layer").height();
+            var context = canvas.getContext("2d");
             var img1 = new Image();
             img1.src = "img/page_2/cup.jpg";
             img1.onload = function () {
-                ctx1.drawImage(img1, 0, 0, canvas1.width, canvas1.height);
-                tapClip(canvas1, ctx1, 1);
+                context.drawImage(img1, 0, 0, canvas.width, canvas.height);
                 $(".bottom-layer").removeClass("opacity-0");
+                tapClip(canvas, context);
             };
-
-            var canvas2 = $("#cas2")[0];
-            var ctx2 = canvas2.getContext("2d");
-            canvas2.width = $(".bottom-layer").width();
-            canvas2.height = $(".bottom-layer").height();
-            var img2 = new Image();
-            img2.src = "img/page_2/socks.jpg";
-            img2.onload = function () {
-                ctx2.drawImage(img2, 0, 0, canvas2.width, canvas2.height);
-                tapClip(canvas2, ctx2, 2);
-            }
         }
 
         setTimeout(function () {
@@ -207,35 +196,37 @@ function showPage(pageNumber) {
     }, 600);
 }
 
-function tapClip(canvas, ctx, index) {
+function tapClip(canvas, context) {
     var x1, y1, a = 20, timeout, totimes = 10, jiange = 20;
+    var currentGift = 1;
+    var wait = false;
     var hastouch = "ontouchstart" in window ? true : false,
         tapstart = hastouch ? "touchstart" : "mousedown",
         tapmove = hastouch ? "touchmove" : "mousemove",
         tapend = hastouch ? "touchend" : "mouseup";
 
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = a * 2;
-    ctx.globalCompositeOperation = "destination-out";
+    context.lineCap = "round";
+    context.lineJoin = "round";
+    context.lineWidth = a * 2;
+    context.globalCompositeOperation = "destination-out";
 
     canvas.addEventListener(tapstart, function (e) {
         clearTimeout(timeout);
         e.preventDefault();
         x1 = (hastouch ? e.targetTouches[0].pageX : e.clientX) - canvas.offsetLeft - $(".pages")[0].offsetLeft;
         y1 = (hastouch ? e.targetTouches[0].pageY : e.clientY) - canvas.offsetTop - $(".pages")[0].offsetTop;
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(x1, y1, 1, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.restore();
+        context.save();
+        context.beginPath();
+        context.arc(x1, y1, 1, 0, 2 * Math.PI);
+        context.fill();
+        context.restore();
 
         canvas.addEventListener(tapmove, tapmoveHandler);
         canvas.addEventListener(tapend, function () {
             canvas.removeEventListener(tapmove, tapmoveHandler);
 
             timeout = setTimeout(function () {
-                var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                var imgData = context.getImageData(0, 0, canvas.width, canvas.height);
                 var dd = 0;
                 for (var x = 0; x < imgData.width; x += jiange) {
                     for (var y = 0; y < imgData.height; y += jiange) {
@@ -245,22 +236,22 @@ function tapClip(canvas, ctx, index) {
                         }
                     }
                 }
-                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.9) {
-                    if (index == 1) {
-                        $("#cas").addClass("nec-ani-rotateOut");
-                        setTimeout(function () {
-                            $("#cas").addClass("hide");
-                            $("#cas").removeClass("nec-ani-rotateOut");
-                            $(".bottom-layer").addClass("opacity-0");
-                            $("#cas2").removeClass("hide");
-                        }, 800);
+                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.8) {
+                    if (currentGift == 1 && !wait) {
+                        var img2 = new Image();
+                        img2.src = "img/page_2/socks.jpg";
+                        img2.onload = function () {
+                            context.globalCompositeOperation = 'source-over';
+                            context.drawImage(img2, 0, 0, canvas.width, canvas.height);
+                            context.globalCompositeOperation = 'destination-out';
+                            $(".bottom-layer").attr("src", "img/page_2/gift.jpg");
+                            wait = true;
+                            setTimeout(function () {
+                                currentGift = 2;
+                            }, 500);
+                        }
                     }
-                    else {
-                        $("#cas2").addClass("nec-ani-rotateOut");
-                        setTimeout(function () {
-                            $("#cas2").addClass("hide");
-                            $("#cas2").removeClass("nec-ani-rotateOut");
-                        }, 800);
+                    if (currentGift == 2) {
                         showPage(3);
                     }
                 }
@@ -271,11 +262,11 @@ function tapClip(canvas, ctx, index) {
             e.preventDefault();
             x2 = (hastouch ? e.targetTouches[0].pageX : e.clientX) - canvas.offsetLeft - $(".pages")[0].offsetLeft;
             y2 = (hastouch ? e.targetTouches[0].pageY : e.clientY) - canvas.offsetTop - $(".pages")[0].offsetTop;
-            ctx.save();
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.stroke();
-            ctx.restore();
+            context.save();
+            context.moveTo(x1, y1);
+            context.lineTo(x2, y2);
+            context.stroke();
+            context.restore();
 
             x1 = x2;
             y1 = y2;
