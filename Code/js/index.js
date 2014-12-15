@@ -3,13 +3,49 @@ var SEG = {
     currentPage: 1,
     formData: { name: "", age: 0, phone: 0 }
 };
-
+var m;
 $(function () {
-    document.addEventListener('touchmove', function (e) {
+	 document.addEventListener('touchmove', function (e) {
         if (SEG.currentPage != 5) {
             e.preventDefault();
         }
     }, false);
+	 var mheight = document.documentElement.clientHeight || document.body.clientHeight;
+
+	if(mheight<480){
+		$('.page-4 .gift-1').css('width','80px');
+		$('.page-4 .gift-1').css('height','80px');
+		$('.page-4 .gift-1').css('marginTop','-120px');
+		$('.page-4 .gift-1').css('marginLeft','-100px');
+		$('.page-4 .shadow-1').css('marginLeft','-110px');
+		$('.page-4 .shadow-1').css('marginTop','-30px');
+		
+		$('.page-4 .gift-2').css('width','80px');
+		$('.page-4 .gift-2').css('height','80px');
+		$('.page-4 .gift-2').css('marginTop','-120px');
+		$('.page-4 .gift-2').css('marginLeft','20px');
+		$('.page-4 .shadow-2').css('marginLeft','10px');
+		$('.page-4 .shadow-2').css('marginTop','-30px');
+		
+		$('.page-4 .gift-3').css('width','80px');
+		$('.page-4 .gift-3').css('height','80px');
+		$('.page-4 .gift-3').css('marginTop','20px');
+		$('.page-4 .gift-3').css('marginLeft','-100px');
+		$('.page-4 .shadow-3').css('marginLeft','-110px');
+		$('.page-4 .shadow-3').css('marginTop','110px');
+		
+		$('.page-4 .gift-4').css('width','80px');
+		$('.page-4 .gift-4').css('height','80px');
+		$('.page-4 .gift-4').css('marginTop','20px');
+		$('.page-4 .gift-4').css('marginLeft','20px');
+		$('.page-4 .shadow-4').css('marginLeft','10px');
+		$('.page-4 .shadow-4').css('marginTop','110px');
+		
+		$('.page-7 .back-button').css('bottom','20px');
+		
+		$('.page-6 .phone-number').css('fontSize','16px');
+		$('.page-6 .phone-number').css('top','30%');
+	}
 
     $(".page-1 .button").click(function () {
         showPage(2);
@@ -72,14 +108,54 @@ $(function () {
     });
 
     $(".page-5 .form .button").click(function () {
+
         SEG.formData.phone = $(".page-5 .form .phone").val();
         SEG.formData.name = $(".page-5 .form .name").val();
-        $(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
+		//SEG.formData.age=$(".page-5 .form .age").html();
+        //$(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
 
         //这里发出ajax请求，并对返回的json进行判断，如果正确的话进行下面两行的操作，否则，不进行任何操作。
+		
+		    $.ajax({
+            //"url": "http://yati_chris.shnow.cn/rexdb.php",
+           "url":" ../rexdb.php", 
+			"type": "post",
+            "data": { 'name': SEG.formData.name, 'agerange': SEG.formData.age,'phone': SEG.formData.phone },
+            "crossDomain": true,
+            "success": function (result) {
+                m =JSON.parse(result) ;
+				if(m.resultId=="999"||m.resultId=="4"){
+				$(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);
+				var mya=[90,100,200,400];
+				for(var ind=0;ind<mya.length;ind++){
+				//alert("mya="+mya[ind]+"||m.point="+m.point);
+				if(mya[ind]!=m.point){
+				$("."+"jifen-"+mya[ind]).addClass("hide");
+				}
+				}
+			    showPage(6);
+				$(".page-5 .form").addClass("hide");
+				}
+				else{
+				if(m.resultId=="1"){
+				$(".page-5 .form .name").val("");
+				$(".page-5 .form .name").attr("placeholder","姓名5个汉字或15个英文单词");
+				//alert(m.resultName);
+				}
+				else if(m.resultId=="6"){
+				 //SEG.formData.age = 1;
+            $(".page-5 .form .age").html("<font style='color:rgb(186, 186, 186)'>请选择年龄</font>");
+				}
+				
+				else{
+				$(".page-5 .form .phone").val("");
+				$(".page-5 .form .phone").attr("placeholder","手机号码不正确");
+				}
+				}
+            }
+        })
 
-        showPage(6);
-        $(".page-5 .form").addClass("hide");
+
     });
 
     $(".page-5 .form .age").click(function () {
@@ -115,7 +191,8 @@ $(function () {
     });
 
     $(".page-7 .back-button").click(function () {
-        showPage(1);
+        //showPage(1);
+		window.location.href="http://yati_chris.shnow.cn/index.html";
     });
 });
 
@@ -124,7 +201,7 @@ function showPage(pageNumber) {
     setTimeout(function () {
         $(".page-" + SEG.currentPage).addClass("hide");
         $(".page-" + SEG.currentPage).removeClass("nec-ani-fadeOut");
-        window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
         $(".page-" + pageNumber).addClass("nec-ani-fadeIn");
         $(".page-" + pageNumber).removeClass("hide");
         setTimeout(function () {
