@@ -60,15 +60,14 @@ body {
     top: 30%;
 }
 
-.page-2 .cup {
+.page-2 .bottom-layer {
     width: 80%;
     left: 10%;
 }
 
-.page-2 .socks {
-    width: 80%;
-    left: 10%;
-}
+    .page-2 .bottom-layer.opacity-0 {
+        opacity: 0;
+    }
 
 .page-2 #cas, .page-2 #cas2 {
     position: absolute;
