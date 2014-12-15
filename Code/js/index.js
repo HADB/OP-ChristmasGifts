@@ -3,6 +3,7 @@ var SEG = {
     currentPage: 1,
     formData: { name: "", age: 0, phone: 0 }
 };
+//123
 var m;
 $(function () {
 	 document.addEventListener('touchmove', function (e) {
