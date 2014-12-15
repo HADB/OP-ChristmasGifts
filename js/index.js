@@ -243,7 +243,7 @@ function tapClip(canvas, context) {
                         context.globalCompositeOperation = 'source-over';
                         context.drawImage(img2, 0, 0, canvas.width, canvas.height);
                         context.globalCompositeOperation = 'destination-out';
-                        $(".bottom-layer").addClass("opacity-0");
+                        $(".bottom-layer").attr("src", "img/page_2/gift.jpg");
                         wait = true;
                         setTimeout(function () {
                             currentGift = 2;
