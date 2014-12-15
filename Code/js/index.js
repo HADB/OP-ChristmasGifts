@@ -177,15 +177,15 @@ function showPage(pageNumber) {
         $(".page-" + pageNumber).removeClass("hide");
         if (pageNumber == 2) {
             var canvas = $("#cas")[0];
-            var context = canvas.getContext("2d");
             canvas.width = $(".bottom-layer").width();
             canvas.height = $(".bottom-layer").height();
+            var context = canvas.getContext("2d");
             var img1 = new Image();
             img1.src = "img/page_2/cup.jpg";
             img1.onload = function () {
                 context.drawImage(img1, 0, 0, canvas.width, canvas.height);
-                tapClip(canvas, context);
                 $(".bottom-layer").removeClass("opacity-0");
+                tapClip(canvas, context);
             };
         }
 
@@ -236,7 +236,7 @@ function tapClip(canvas, context) {
                         }
                     }
                 }
-                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.9) {
+                if (dd / (imgData.width * imgData.height / (jiange * jiange)) < 0.8) {
                     if (currentGift == 1 && !wait) {
                         var img2 = new Image();
                         img2.src = "img/page_2/socks.jpg";
