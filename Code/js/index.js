@@ -86,7 +86,6 @@ $(function () {
 
         $.ajax({
             "url": "http://yati_chris.shnow.cn/rexdb.php",
-            //"url": " ../rexdb.php",
             "type": "post",
             "data": { 'name': SEG.formData.name, 'agerange': SEG.formData.age, 'phone': SEG.formData.phone },
             "crossDomain": true,
@@ -156,7 +155,7 @@ $(function () {
     });
 
     $(".page-7 .back-button").click(function () {
-        window.location.href = "http://yati_chris.shnow.cn/index.html";
+        window.location.href = "index.html";
     });
 });
 
